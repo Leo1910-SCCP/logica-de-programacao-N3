@@ -1,57 +1,38 @@
-﻿
-using System.ComponentModel.Design;
+﻿// Definir as constantes
+const int DEZOITO = 18;
+const int ZERO = 0;
 
-Console.WriteLine("qual sua idade");
+// Escrevendo no console uma string pedindo a idade do usuario
+Console.WriteLine("Qual a sua idade?");
 
-string Resposta  = Console.ReadLine();
+// Ler a resposta do usuario
+string resposta = Console.ReadLine();
 
-int Idade = int.Parse(Resposta);
+// Tenta transformar a string resposta em um int idade,
+// atribui o resultado a uma variavel bool
+bool ehValido = int.TryParse(resposta, out int idade);
 
-bool Valido = int.TryParse(Resposta, out Idade);
-
-
-
-if (Valido)
+// Verifica se a tentativa de parse funcionou
+if (ehValido)
 {
- 
-    
-    if (Idade >= 18)
-            
-     {   Console.WriteLine("Usuario maior de idade");   
-     }
- 
-     else if (Idade <=0)
-     {
-        Console.WriteLine("Idade invalida"); 
-     }   
-     
-    else 
+    // Verifica se idade é maior ou igual a 18
+    if (idade >= DEZOITO)
     {
-        Console.WriteLine("Usuario menor de idade");
+        Console.WriteLine("Usuário é maior de idade.");
     }
-        
-
-
-
-
-
+    // Verifica se a idade é válida
+    else if (idade < ZERO)
+    {
+        Console.WriteLine("Idade inválida");
+    }
+    // Se for valida e menor que 18
+    else
+    {
+        Console.WriteLine("Usuário é menor de idade");
+    }
 }
-           
-else 
-        {
-            Console.WriteLine("valor informado não é valido");
-
-        }       
-        
-
-
-
-
-
-
-
-
-
-
-
-
+// Case nao tenha funcionado
+else
+{
+    Console.WriteLine("Valor informado não corresponde a um número inteiro");
+}
