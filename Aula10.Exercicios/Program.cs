@@ -7,29 +7,44 @@ int idade = int.Parse(Console.ReadLine());
 
 bool MaiorIdade = idade > 17;
 
-for (int chances = 0; chances < 3; chances++)
+ if (idade > 17)
 {
-    if (idade > 17)
-{
-    Console.WriteLine("Qual é a senha");
-    senha2 = int.Parse(Console.ReadLine());
-    
-        if (senha ==senha2)
+    for (int chances = 4; chances > 0; chances--)
     {
-        Console.WriteLine("Parabens você acertou a senha");
-    }
-    
-        else
-    {
-        Console.WriteLine("Senha errada vc tem mais " + chances + "tentativas");
+        Console.WriteLine("Qual é a senha");
+        senha2 = int.Parse(Console.ReadLine());
+            if (senha == senha2)
+        {
+            Console.WriteLine("Parabens você acertou a senha");
+        }
+            else
+        {
+            Console.WriteLine("Senha errada vc tem mais " + chances + "tentativas");
+
+        }
+
+
+
     }
 
-}
-    else
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  
+else
     {
         Console.WriteLine("Você é muito novo pra isso");
     }
-}
 
 
 
